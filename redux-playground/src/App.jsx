@@ -1,11 +1,11 @@
-
+import ChangeName from "./components/change-name/ChangeName"
 
 function App() {
 
 
   return (
     <div className="App">
-      hi
+      <ChangeName />
     </div>
   )
 }
