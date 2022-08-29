@@ -14,6 +14,7 @@ function TodoList() {
 
     const handleAddTodo = () => {
         dispatch(addTodo(todo));
+        setTodo('');
     }
 
     const handleRemoveTodo = (e) => {
@@ -25,15 +26,15 @@ function TodoList() {
         <div>
             <div>
                 <label>Add ToDo:</label>
-                <input onChange={handleInput} />
+                <input onChange={handleInput} value={todo} />
                 <button onClick={handleAddTodo}>Add ToDo</button>
             </div>
             <div>
                 <h4>All todos:</h4>
                 <p>To remove a todo from the list simply click on it.</p>
-                <ul>
+                <ul onClick={handleRemoveTodo}>
                     {
-                        allTodos.map((elem, index) => <li key={index} id={index} onClick={handleRemoveTodo}>{elem}</li>)
+                        allTodos.map((elem, index) => <li key={index} id={index} >{elem}</li>)
                     }
                 </ul>
             </div>
